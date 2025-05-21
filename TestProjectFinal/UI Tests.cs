@@ -7,7 +7,11 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 [TestFixture]
 public class tests
 {
+#pragma warning disable CA1859 
+#pragma warning disable NUnit1032 
     private IWebDriver driver;
+#pragma warning restore NUnit1032 
+#pragma warning restore CA1859 
     private LoginPage loginPage;
     private HomePage homePage;
 
@@ -24,7 +28,7 @@ public class tests
     }
 
     [Test]
-    public void TC01_ValidLogin_NavigatesToHomePageage()
+    public void TC01_ValidLogin_NavigatesToHomePage()
     {
         loginPage.EnterUsername("standard_user");
         loginPage.EnterPassword("secret_sauce");
